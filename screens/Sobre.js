@@ -1,0 +1,4 @@
+import React from 'react';
+import {Text,View} from 'react-native';
+import {Pagina,s} from '../components/ui.js';
+export default function Sobre(){return <Pagina><Text style={s.titulo}>Conhecer seus dias ajuda a contar sua história.</Text><Text style={s.texto}>MoodAlert organiza registros de humor e sono para pessoas que precisam acompanhar variações emocionais e levar suas observações às consultas.</Text><View style={s.card}><Text style={[s.titulo,{fontSize:22}]}>Nesta versão</Text><Text style={s.texto}>Registro diário e histórico com dados salvos no MySQL. Interface inspirada no Clara, adaptada para celular.</Text></View><Text style={s.titulo}>Próximas etapas</Text><Text style={s.texto}>Conta de paciente, acesso de médico autorizado e autenticação JWT serão desenvolvidos na entrega 3. Alertas de medicação e afetivograma ficam como possibilidades futuras.</Text></Pagina>;}

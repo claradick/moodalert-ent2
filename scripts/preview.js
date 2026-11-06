@@ -1,0 +1,27 @@
+import { chromium } from '@playwright/test';
+import { mkdir } from 'node:fs/promises';
+await mkdir('preview',{recursive:true});
+const browser=await chromium.launch({headless:true});
+const page=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1});
+const erros=[];page.on('pageerror',e=>erros.push(e.message));
+await page.goto('http://127.0.0.1:8092');
+await page.getByRole('button',{name:'Registrar meu dia',exact:true}).waitFor();
+await page.screenshot({path:'preview/inicio.png',fullPage:true});
+await page.getByRole('button',{name:'Registrar meu dia',exact:true}).click();
+await page.getByLabel('Horas de sono',{exact:true}).fill('8');
+await page.getByLabel('Observações',{exact:true}).fill('Registro fictício para demonstrar o diário.');
+await page.screenshot({path:'preview/registro.png',fullPage:true});
+await page.getByRole('button',{name:'Salvar registro',exact:true}).click();
+await page.getByText('Registro fictício para demonstrar o diário.',{exact:true}).waitFor();
+await page.reload();
+// React Navigation reinicia no Início; o histórico deve continuar no banco.
+await page.getByRole('button',{name:'Abrir meu diário',exact:true}).click();
+await page.getByText('Registro fictício para demonstrar o diário.',{exact:true}).waitFor();
+await page.screenshot({path:'preview/diario.png',fullPage:true});
+await page.setViewportSize({width:1366,height:900});
+await page.reload();
+await page.getByRole('button',{name:'Registrar meu dia',exact:true}).waitFor();
+await page.screenshot({path:'preview/desktop.png',fullPage:true});
+await browser.close();
+if(erros.length)throw new Error(erros.join('\n'));
+console.log('Preview e fluxo real de cadastro/persistência aprovados.');

@@ -1,0 +1,6 @@
+import React from 'react';
+import {View,Text} from 'react-native';
+import {Pagina,Botao,s,cores} from '../components/ui.js';
+export default function Inicio({navigation}){
+ return <Pagina><Text style={{color:cores.verde,fontSize:19,fontWeight:'700',marginTop:28,marginBottom:36}}>MoodAlert</Text><Text style={[s.titulo,{fontSize:42,lineHeight:49}]}>Um dia de cada vez.</Text><Text style={s.texto}>Um espaço para observar seu humor, registrar seu sono e dar palavras ao que você sente.</Text><View style={s.card}><Text style={[s.titulo,{fontSize:23}]}>Como você está hoje?</Text><Text style={s.texto}>Reserve um momento para você. Seu diário ajuda a perceber mudanças ao longo dos dias.</Text><View style={{marginTop:20}}><Botao titulo="Registrar meu dia" onPress={()=>navigation.navigate('NovoRegistro')}/><Botao secundario titulo="Abrir meu diário" onPress={()=>navigation.navigate('Diario')}/></View></View><Text style={s.texto}>Perfil de demonstração · Paciente</Text><Text style={[s.texto,{fontSize:14,marginTop:12}]}>Esta versão acadêmica usa apenas dados fictícios. Não substitui acompanhamento profissional.</Text><Botao secundario titulo="Conhecer o projeto" onPress={()=>navigation.navigate('Sobre')}/></Pagina>;
+}
