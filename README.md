@@ -70,9 +70,3 @@ Exemplo POST: `{"data":"2026-01-01","humor":3,"sono":7.5,"nota":"Dia tranquilo"}
 Erros têm formato `{"erro":"mensagem"}`. Banco indisponível retorna 503; rota desconhecida, 404. SQL parametrizado; conexão com pool mysql2/promise. Organização: backend/server.js inicia; app.js configura Express; routes encaminha; controllers valida e executa consultas; database mantém conexão. Aplicativo usa services/api.js com fetch e limite de dez segundos.
 
 Setup usa o nome moodalert do SQL. DB_NAME deve permanecer moodalert ao usar `npm run db:setup`; para outro nome, ajuste também o SQL.
-
-## Evidências dos indicadores
-
-Entrega 1: problema e público nesta proposta; funcionalidades, permissões e fluxo acima; App.js com Native Stack; quatro telas em screens e componentes em components. Entrega 2: modelagem e constraints no SQL; separação de API em backend; GET e POST consumidos por fetch nas telas Diário e NovoRegistro; README com execução e limitações.
-
-Evolução técnica: a referência original em HTML/Firebase foi migrada para Expo/Express/MySQL, com registro diário persistente e validação no servidor. O histórico Git e o envio ao remoto ficam a cargo do aluno; não foram fabricados commits retroativos. Este pacote não comprova push. Autenticação, JWT, edição/exclusão e APK não fazem parte desta entrega.
