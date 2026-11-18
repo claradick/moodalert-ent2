@@ -11,7 +11,7 @@ Requer Node 22.13+ e MySQL 8.
 3. `npm run api`
 4. Em outro terminal: `npm run web` ou `npm start` para abrir no Expo Go.
 
-No celular, troque localhost pelo IP do computador na rede, por exemplo `http://192.168.1.10:3012`. Celular e computador devem estar na mesma rede. Reinicie o Expo após alterar o endereço.
+No celular, troque localhost pelo IP do computador na rede, por exemplo `http://192.168.1.10:3000`. Celular e computador devem estar na mesma rede. Reinicie o Expo após alterar o endereço.
 
 Use apenas dados fictícios. Nesta etapa há um perfil demonstrativo fixo, sem autenticação. Login, JWT, permissões e CRUD completo ficam para a entrega 3; APK para a entrega 4.
 
